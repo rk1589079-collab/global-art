@@ -2,84 +2,190 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Global Art</title>
+<title>Global Art – Luxury Fashion Brand</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --gold:#d4af37;
-  --dark:#0b0b0e;
-  --light:#f7f5ef;
+  --dark:#0e0e0e;
+  --light:#f5f3ef;
+  --gold:#c7a24d;
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{
-  margin:0;
-  font-family: 'Poppins', sans-serif;
-  background: var(--dark);
-  color:white;
-  transition:0.5s;
+  font-family:'Poppins',sans-serif;
+  background:var(--dark);
+  color:var(--light);
 }
-.light{
-  background:var(--light);
-  color:#111;
-}
+
+/* NAVBAR */
 header{
-  padding:30px;
-  text-align:center;
-  background:linear-gradient(90deg,#000,#111,#000);
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.9);
+  border-bottom:1px solid #222;
+  z-index:1000;
 }
-h1{
+nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+}
+nav h1{
+  font-family:'Playfair Display',serif;
+  letter-spacing:3px;
+  font-size:24px;
+  color:var(--light);
+}
+nav a{
+  margin-left:30px;
+  text-decoration:none;
+  color:#aaa;
+  font-size:14px;
+}
+nav a:hover{color:var(--gold);}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(to bottom, #0e0e0e, #141414);
+}
+.hero h2{
+  font-family:'Playfair Display',serif;
+  font-size:60px;
+  letter-spacing:4px;
+}
+.hero p{
+  margin:25px auto;
+  max-width:600px;
+  color:#aaa;
+}
+.btn{
+  display:inline-block;
+  padding:14px 40px;
+  border:1px solid var(--gold);
   color:var(--gold);
-  font-size:40px;
+  text-decoration:none;
   letter-spacing:2px;
+  transition:0.4s;
 }
-button{
+.btn:hover{
   background:var(--gold);
-  border:none;
-  padding:10px 20px;
-  border-radius:30px;
-  font-size:16px;
-  cursor:pointer;
-  margin-top:15px;
+  color:black;
 }
+
+/* SECTIONS */
 section{
-  padding:50px;
+  padding:120px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+h3{
   text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  margin-bottom:60px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 .card{
-  background:#111;
-  padding:25px;
-  margin:20px;
-  border-radius:20px;
-  box-shadow:0 0 20px rgba(212,175,55,0.3);
+  background:#141414;
+  padding:40px;
+  border:1px solid #222;
   transition:0.4s;
 }
 .card:hover{
-  transform:scale(1.05);
+  transform:translateY(-10px);
+  border-color:var(--gold);
 }
-.light .card{
-  background:white;
+.card h4{
+  color:var(--gold);
+  margin-bottom:15px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px;
+  background:#080808;
+  border-top:1px solid #222;
+  color:#777;
 }
 </style>
 </head>
 
 <body>
+
 <header>
-  <h1>GLOBAL ART</h1>
-  <p>Luxury Digital Creative Studio</p>
-  <button onclick="toggle()">🌙 Light / Dark</button>
+<nav>
+<h1>GLOBAL ART</h1>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 </header>
 
-<section>
-  <div class="card">🎨 Premium Designs</div>
-  <div class="card">🚀 High Quality Branding</div>
-  <div class="card">💎 Luxury Business Website</div>
+<div class="hero" id="home">
+<div>
+<h2>GLOBAL ART</h2>
+<p>Luxury fashion and digital presence designed for elite brands.</p>
+<a href="#contact" class="btn">START YOUR JOURNEY</a>
+</div>
+</div>
+
+<section id="about">
+<h3>About Us</h3>
+<p style="text-align:center;color:#aaa;max-width:700px;margin:auto;">
+Global Art is a luxury fashion and creative studio delivering timeless elegance and digital excellence.
+</p>
 </section>
 
-<script>
-function toggle(){
-  document.body.classList.toggle("light");
-}
-</script>
+<section id="services">
+<h3>Our Services</h3>
+<div class="cards">
+<div class="card">
+<h4>Fashion Branding</h4>
+<p>High-end brand identity for luxury labels.</p>
+</div>
+<div class="card">
+<h4>Website Design</h4>
+<p>Minimal, elegant, and premium digital experiences.</p>
+</div>
+<div class="card">
+<h4>Creative Direction</h4>
+<p>Visual storytelling that defines your brand.</p>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h3>Contact Us</h3>
+<p style="text-align:center;color:#aaa;">Email: globalart@gmail.com</p>
+</section>
+
+<footer>
+© 2026 Global Art — Luxury Fashion Brand
+</footer>
 
 </body>
 </html>
