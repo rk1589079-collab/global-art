@@ -9,202 +9,205 @@
 
 <style>
 :root{
-  --bg:#0b1220;
-  --fg:#fdf6e3;
-  --card:#020617;
-  --gold:#facc15;
+  --bg:#B2AEA2;
+  --fg:#ffffff;
+  --card:#9f9b90;
+  --gold:#ffffff;
 }
+
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:Poppins,sans-serif;background:var(--bg);color:var(--fg);transition:.4s;}
-body.light{--bg:#fdf6e3;--fg:#0b1220;--card:#ffffff;}
+body{
+  font-family:Poppins,sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+}
 
-header{position:fixed;top:0;left:0;width:100%;backdrop-filter:blur(8px);
-background:rgba(0,0,0,.6);z-index:999;border-bottom:1px solid #1e293b;}
-body.light header{background:#ffffffcc;}
-nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
-nav h1{font-family:"Playfair Display",serif;letter-spacing:3px;color:var(--gold);}
-nav a{color:#cbd5f5;text-decoration:none;margin-left:22px;}
-nav a:hover{color:var(--gold);}
-.toggle{border:1px solid var(--gold);background:transparent;color:var(--gold);padding:6px 14px;border-radius:8px;margin-left:16px;}
+header{
+  position:fixed;top:0;left:0;width:100%;
+  backdrop-filter:blur(10px);
+  background:rgba(178,174,162,.85);
+  z-index:999;
+}
 
-.hero{min-height:100vh;display:grid;place-items:center;text-align:center;
-background:radial-gradient(80% 50% at 50% 10%,#1f2a44,transparent);}
-body.light .hero{background:radial-gradient(80% 50% at 50% 10%,#e7dcc9,transparent);}
-.hero h2{font-family:"Playfair Display",serif;font-size:60px;color:var(--gold);letter-spacing:4px;}
-.hero p{max-width:680px;margin:18px auto;color:#d1d5ff;}
-body.light .hero p{color:#333;}
-.btn{display:inline-block;padding:14px 36px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;border-radius:10px;}
-.btn:hover{background:var(--gold);color:#000;}
+nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 24px;
+}
 
-section{max-width:1200px;margin:auto;padding:120px 20px;}
-h3{text-align:center;font-family:"Playfair Display",serif;color:var(--gold);margin-bottom:50px;}
+nav h1{
+  font-family:"Playfair Display",serif;
+  letter-spacing:4px;
+  color:#fff;
+}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;}
-.card{background:var(--card);border:1px solid #1e293b;border-radius:16px;padding:28px;transition:.3s;}
-.card:hover{transform:translateY(-8px);border-color:var(--gold);}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:22px;
+  opacity:.8;
+}
+nav a:hover{opacity:1;}
 
-footer{text-align:center;padding:40px;background:#020617;}
-body.light footer{background:#e5e7eb;}
+.hero{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  background:radial-gradient(80% 50% at 50% 10%,#c9c4b6,transparent);
+}
 
-.float{position:fixed;bottom:22px;width:56px;height:56px;border-radius:50%;
-display:grid;place-items:center;font-size:26px;color:#fff;text-decoration:none;z-index:999;}
+.hero h2{
+  font-family:"Playfair Display",serif;
+  font-size:64px;
+  letter-spacing:6px;
+}
+
+.hero p{
+  max-width:600px;
+  margin:18px auto;
+  color:#f5f5f5;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 36px;
+  border:1px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  border-radius:50px;
+  transition:.3s;
+}
+.btn:hover{
+  background:#fff;
+  color:#9f9b90;
+}
+
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:120px 20px;
+  text-align:center;
+}
+
+h3{
+  font-family:"Playfair Display",serif;
+  letter-spacing:4px;
+  margin-bottom:50px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
+}
+
+.card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  padding:32px;
+  transition:.4s;
+}
+.card:hover{transform:translateY(-10px);}
+
+.carousel{
+  display:flex;
+  gap:28px;
+  overflow-x:auto;
+  padding-bottom:20px;
+}
+.carousel::-webkit-scrollbar{display:none;}
+
+.card img{
+  width:100%;
+  border-radius:16px;
+  cursor:pointer;
+  transition:.4s;
+}
+.card img:hover{transform:scale(1.05);}
+
+footer{
+  text-align:center;
+  padding:40px;
+  background:#9f9b90;
+}
+
+.float{
+  position:fixed;
+  bottom:22px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  color:#fff;
+  text-decoration:none;
+  z-index:999;
+}
 .whatsapp{right:22px;background:#25D366;}
 .insta{right:90px;background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);}
 
-form{max-width:520px;margin:auto}
-input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #1e293b;}
-
-/* Ultra Carousel & Popup */
-.carousel{
-  display:flex;
-  overflow-x:auto;
-  gap:24px;
-  padding-bottom:24px;
-  scroll-behavior:smooth;
-}
-.carousel::-webkit-scrollbar{display:none;}
-.card img{border-radius:12px;width:100%;transition:.3s;cursor:pointer;}
-.card:hover img{transform:scale(1.05);}
-.card h4{color:var(--gold);margin:12px 0 6px;}
-.card p{margin-bottom:12px;}
-.card .btn{display:inline-block;margin-right:8px;margin-top:6px;}
-
-/* Pop-up */
-#popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:999;}
-#popup img{max-width:90%;max-height:90%;border-radius:16px;}
-#popup span{position:absolute;top:30px;right:30px;font-size:36px;color:#fff;cursor:pointer;}
 </style>
 </head>
 
 <body>
 
-<!-- Floating Buttons -->
-<a href="https://wa.me/917378272741" class="float whatsapp" target="_blank">💬</a>
-<a href="https://www.instagram.com/mystivated66" class="float insta" target="_blank">📷</a>
+<a href="https://wa.me/917378272741" class="float whatsapp">💬</a>
+<a href="https://www.instagram.com/mystivated66" class="float insta">📷</a>
 
 <header>
-  <nav>
-    <h1>GLOBAL ART</h1>
-    <div>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#art-sale">Art Sale</a>
-      <a href="#contact">Contact</a>
-      <button class="toggle" onclick="document.body.classList.toggle('light')">Light/Dark</button>
-    </div>
-  </nav>
+<nav>
+<h1>GLOBAL ART</h1>
+<div>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#art">Art</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 </header>
 
-<!-- Hero Section -->
 <div class="hero" id="home">
-  <div>
-    <h2>GLOBAL ART</h2>
-    <p>Luxury creative studio for premium branding, logos and social media design.</p>
-    <a href="https://wa.me/917378272741" class="btn">Chat on WhatsApp</a>
-  </div>
+<div>
+<h2>GLOBAL ART</h2>
+<p>Luxury Creative Studio for Premium Branding & Digital Art</p>
+<a href="https://wa.me/917378272741" class="btn">Chat on WhatsApp</a>
+</div>
 </div>
 
-<!-- About Section -->
-<section id="about">
-  <h3>About Us</h3>
-  <p style="text-align:center;max-width:720px;margin:auto;">
-    We build high-end visual identities, modern logos and social media creatives for brands that want to stand out.
-  </p>
-</section>
-
-<!-- Services Section -->
 <section id="services">
-  <h3>Our Services</h3>
-  <div class="grid">
-    <div class="card">Luxury Logo Design</div>
-    <div class="card">Instagram Branding</div>
-    <div class="card">Digital Art & Posters</div>
-    <div class="card">Website Visuals</div>
-  </div>
+<h3>Our Services</h3>
+<div class="grid">
+<div class="card">Luxury Logo Design</div>
+<div class="card">Instagram Branding</div>
+<div class="card">Digital Art</div>
+<div class="card">Premium Posters</div>
+</div>
 </section>
 
-<!-- Ultra Carousel Art Sale Section -->
-<section id="art-sale">
-<h3>Art For Sale</h3>
+<section id="art">
+<h3>Art Gallery</h3>
 <div class="carousel">
-
-<div class="card">
-<img src="drawing1.jpg" alt="Sunset Dreams" onclick="openPopup(this.src)">
-<h4>Sunset Dreams</h4>
-<p>Price: ₹500</p>
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Sunset%20Dreams" class="btn" target="_blank">WhatsApp</a>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/500" class="btn" target="_blank">PayPal</a>
-</div>
-
-<div class="card">
-<img src="drawing2.jpg" alt="Golden Horizon" onclick="openPopup(this.src)">
-<h4>Golden Horizon</h4>
-<p>Price: ₹700</p>
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Golden%20Horizon" class="btn" target="_blank">WhatsApp</a>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/700" class="btn" target="_blank">PayPal</a>
-</div>
-
-<div class="card">
-<img src="drawing3.jpg" alt="Moonlight Tale" onclick="openPopup(this.src)">
-<h4>Moonlight Tale</h4>
-<p>Price: ₹600</p>
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Moonlight Tale" class="btn" target="_blank">WhatsApp</a>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/600" class="btn" target="_blank">PayPal</a>
-</div>
-
-<div class="card">
-<img src="drawing4.jpg" alt="Golden Aura" onclick="openPopup(this.src)">
-<h4>Golden Aura</h4>
-<p>Price: ₹800</p>
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Golden Aura" class="btn" target="_blank">WhatsApp</a>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/800" class="btn" target="_blank">PayPal</a>
-</div>
-
-<div class="card">
-<img src="drawing5.jpg" alt="Twilight Glow" onclick="openPopup(this.src)">
-<h4>Twilight Glow</h4>
-<p>Price: ₹900</p>
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Twilight Glow" class="btn" target="_blank">WhatsApp</a>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/900" class="btn" target="_blank">PayPal</a>
-</div>
-
+<div class="card"><img src="drawing1.jpg"></div>
+<div class="card"><img src="drawing2.jpg"></div>
+<div class="card"><img src="drawing3.jpg"></div>
+<div class="card"><img src="drawing4.jpg"></div>
 </div>
 </section>
 
-<!-- Popup for images -->
-<div id="popup" onclick="closePopup()">
-<span>×</span>
-<img src="" alt="preview">
-</div>
-
-<script>
-function openPopup(src){
-  document.querySelector('#popup img').src = src;
-  document.querySelector('#popup').style.display='flex';
-}
-function closePopup(){
-  document.querySelector('#popup').style.display='none';
-}
-</script>
-
-<!-- Contact Section -->
 <section id="contact">
-  <h3>Contact Global Art</h3>
-  <form action="https://formsubmit.co/globalart@gmail.com" method="POST">
-    <input name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <input name="phone" placeholder="Your WhatsApp Number" />
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button class="btn" type="submit">Send Message</button>
-  </form>
-  <p style="text-align:center;margin-top:24px">
-    WhatsApp: 7378272741 • Instagram: mystivated66
-  </p>
+<h3>Contact Global Art</h3>
+<p>WhatsApp: 7378272741</p>
+<p>Instagram: mystivated66</p>
 </section>
 
 <footer>© 2026 Global Art</footer>
 
 </body>
-                </html>
+  </html>
