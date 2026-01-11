@@ -2,81 +2,202 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Global Art – Creative Brand</title>
+<title>Global Art – Luxury Brand</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+:root{
+  --lux-dark:#1a1a2e;     /* Luxury dark background */
+  --lux-light:#fdf6e3;    /* Creamy white text */
+  --lux-gold:#ffcc00;     /* Accent color */
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;transition:0.5s;}
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#0b0b0b;
-color:white;
+  font-family:'Poppins',sans-serif;
+  background:var(--lux-dark);
+  color:var(--lux-light);
+  transition: background 0.5s, color 0.5s;
 }
+
+/* Light/Dark toggle */
+body.light-mode{
+  background:#fdf6e3;
+  color:#1a1a2e;
+}
+
+/* NAVBAR */
 header{
-background:black;
-padding:25px;
-text-align:center;
-border-bottom:2px solid gold;
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.85);
+  border-bottom:1px solid #222;
+  z-index:1000;
+  transition: background 0.5s;
 }
-header h1{
-color:gold;
-font-size:36px;
-letter-spacing:3px;
+body.light-mode header{
+  background:rgba(255,255,255,0.85);
+  border-bottom:1px solid #ccc;
+}
+nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+}
+nav h1{
+  font-family:'Playfair Display',serif;
+  letter-spacing:3px;
+  font-size:24px;
+  color:var(--lux-light);
+  transition: color 0.5s;
+}
+body.light-mode nav h1{
+  color:#1a1a2e;
 }
 nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-weight:bold;
+  margin-left:30px;
+  text-decoration:none;
+  color:#aaa;
+  font-size:14px;
+  transition: color 0.5s;
 }
+nav a:hover{color:var(--lux-gold);}
+
+/* TOGGLE BUTTON */
+.toggle-btn{
+  cursor:pointer;
+  padding:6px 12px;
+  border:1px solid var(--lux-gold);
+  color:var(--lux-gold);
+  background:transparent;
+  border-radius:6px;
+  transition:0.4s;
+}
+.toggle-btn:hover{
+  background:var(--lux-gold);
+  color:var(--lux-dark);
+}
+
+/* HERO */
 .hero{
-background:linear-gradient(to right,#000,#111);
-padding:100px 20px;
-text-align:center;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(to bottom, var(--lux-dark), #141414);
+  transition: background 0.5s;
+}
+body.light-mode .hero{
+  background:linear-gradient(to bottom, #fdf6e3, #eae3d9);
 }
 .hero h2{
-font-size:48px;
-color:gold;
+  font-family:'Playfair Display',serif;
+  font-size:60px;
+  letter-spacing:4px;
+  animation: fadeInDown 1s ease forwards;
 }
 .hero p{
-font-size:20px;
-max-width:600px;
-margin:auto;
+  margin:25px auto;
+  max-width:600px;
+  color:#ccc;
+  animation: fadeInUp 1.2s ease forwards;
 }
+body.light-mode .hero p{color:#555;}
 .btn{
-background:gold;
-color:black;
-padding:15px 30px;
-display:inline-block;
-margin-top:20px;
-text-decoration:none;
-font-weight:bold;
-border-radius:5px;
+  display:inline-block;
+  padding:14px 40px;
+  border:1px solid var(--lux-gold);
+  color:var(--lux-gold);
+  text-decoration:none;
+  letter-spacing:2px;
+  transition:0.4s;
+  animation: fadeInUp 1.4s ease forwards;
 }
-.section{
-padding:80px 20px;
-text-align:center;
+.btn:hover{
+  background:var(--lux-gold);
+  color:black;
 }
+
+/* SECTIONS */
+section{
+  padding:120px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+h3{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  margin-bottom:60px;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* CARDS */
 .cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 .card{
-background:#111;
-border:1px solid gold;
-width:280px;
-padding:30px;
-border-radius:10px;
+  background:#141414;
+  padding:40px;
+  border:1px solid #222;
+  transition:0.4s;
+  transform: translateY(20px);
+  opacity:0;
+  animation: cardFade 1s forwards;
 }
-.card h3{
-color:gold;
+body.light-mode .card{
+  background:#fdf6e3;
+  border:1px solid #ccc;
 }
+.card:hover{
+  transform:translateY(-10px);
+  border-color:var(--lux-gold);
+}
+.card h4{
+  color:var(--lux-gold);
+  margin-bottom:15px;
+}
+
+/* FOOTER */
 footer{
-background:black;
-text-align:center;
-padding:30px;
-border-top:2px solid gold;
+  text-align:center;
+  padding:50px;
+  background:#080808;
+  border-top:1px solid #222;
+  color:#777;
+  transition: background 0.5s, color 0.5s;
+}
+body.light-mode footer{
+  background:#f0f0f0;
+  color:#333;
+}
+
+/* Animations */
+@keyframes fadeInDown{
+  0%{opacity:0; transform: translateY(-20px);}
+  100%{opacity:1; transform: translateY(0);}
+}
+@keyframes fadeInUp{
+  0%{opacity:0; transform: translateY(20px);}
+  100%{opacity:1; transform: translateY(0);}
+}
+@keyframes fadeIn{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+@keyframes cardFade{
+  0%{opacity:0; transform: translateY(20px);}
+  100%{opacity:1; transform: translateY(0);}
 }
 </style>
 </head>
@@ -84,47 +205,65 @@ border-top:2px solid gold;
 <body>
 
 <header>
-<h1>GLOBAL ART</h1>
 <nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<h1>GLOBAL ART</h1>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+<button class="toggle-btn" onclick="toggleMode()">Light/Dark</button>
+</div>
 </nav>
 </header>
 
-<section class="hero">
-<h2>Build Your Brand With Global Art</h2>
-<p>We create premium designs, branding and digital presence for future leaders.</p>
-<a class="btn" href="#">Start Your Journey</a>
+<div class="hero" id="home">
+<div>
+<h2>GLOBAL ART</h2>
+<p>Luxury fashion and digital presence designed for elite brands.</p>
+<a href="#contact" class="btn">START YOUR JOURNEY</a>
+</div>
+</div>
+
+<section id="about">
+<h3>About Us</h3>
+<p style="text-align:center;color:#ccc;max-width:700px;margin:auto;">
+Global Art is a creative design studio helping brands stand out in the digital world.
+</p>
 </section>
 
-<section class="section">
-<h2 style="color:gold;">Our Services</h2>
+<section id="services">
+<h3>Our Services</h3>
 <div class="cards">
 <div class="card">
-<h3>Logo Design</h3>
-<p>Professional logos that build trust and identity.</p>
+<h4>Logo Design</h4>
+<p>Luxury and modern logos that make your brand unforgettable.</p>
 </div>
 <div class="card">
-<h3>Website Design</h3>
-<p>Modern responsive websites that convert visitors.</p>
+<h4>Social Media Design</h4>
+<p>Instagram, YouTube and business visuals that attract attention.</p>
 </div>
 <div class="card">
-<h3>Brand Strategy</h3>
-<p>We help your brand stand out in the digital world.</p>
+<h4>Brand Identity</h4>
+<p>Colors, fonts and style that make your brand look premium.</p>
 </div>
 </div>
 </section>
 
-<section class="section">
-<h2 style="color:gold;">Why Global Art?</h2>
-<p>Because your brand deserves a premium digital presence that attracts success.</p>
+<section id="contact">
+<h3>Contact Us</h3>
+<p style="text-align:center;color:#ccc;">Email: globalart@gmail.com</p>
 </section>
 
 <footer>
-<p>© 2026 Global Art | All Rights Reserved</p>
+© 2026 Global Art — Luxury Brand
 </footer>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle('light-mode');
+}
+</script>
 
 </body>
   </html>
