@@ -1,75 +1,85 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Global Art</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global Art - Ultra PRO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* ================= Root Variables ================= */
-:root {
-  --bg-dark: #0a0a0f;
-  --bg-light: #fff8f0;
-  --text-dark: #3b2e2c;
-  --text-light: #fdf6f0;
-  --primary: #e0b341;       /* gold buttons */
-  --primary-dark: #b5861a;  /* hover */
-  --gradient1: linear-gradient(135deg, #7b2ff7, #f107a3);
-  --gradient2: linear-gradient(45deg, #e0b341, #f107a3);
-}/* ================= Body & Scroll ================= */ body { margin: 0; font-family: 'Inter', Arial, sans-serif; background: var(--bg-dark); color: var(--text-light); scroll-behavior: smooth; transition: background 0.4s, color 0.4s; overflow-x: hidden; } body.light { background: var(--bg-light); color: var(--text-dark); }
-
-/* ================= Header ================= */ header { padding: 120px 20px 60px 20px; background: var(--gradient1); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; text-align: center; transition: background 0.4s; position: relative; } body.light header { background: linear-gradient(135deg, #fbc1ff, #a0c4ff); } .logo { position: absolute; top: 20px; left: 20px; font-weight: bold; font-size: 24px; color: var(--text-light); } body.light .logo { color: var(--text-dark); } header h1 { margin: 0; font-size: 48px; background: var(--gradient2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } header p { margin-top: 12px; font-size: 20px; }
-
-/* ================= Sections ================= */ section { padding: 60px 20px; } h2 { font-size: 28px; background: var(--gradient2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; text-align: center; } .box { background: rgba(20,20,30,0.85); margin: 30px auto; padding: 30px; border-radius: 20px; max-width: 600px; transition: transform 0.4s, box-shadow 0.4s, background 0.4s; opacity: 0; transform: translateY(50px); } body.light .box { background: rgba(255,248,240,0.95); color: var(--text-dark); } .box.show { opacity: 1; transform: translateY(0); } .box:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(224,179,65,0.4); }
-
-.service { display: flex; align-items: center; gap: 14px; padding: 12px 0; font-size: 18px; } .service span { font-size: 26px; }
-
-/* ================= Buttons ================= */ .btn { display: inline-block; margin: 14px 10px; padding: 16px 28px; background: var(--primary); color: var(--text-light); text-decoration: none; border-radius: 16px; font-weight: 700; font-size: 16px; transition: 0.4s; } .btn:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 0 20px rgba(224,179,65,0.5); } body.light .btn { color: var(--text-dark); }
-
-/* ================= Footer ================= */ footer { padding: 30px; background: #111421; color: #aaa; font-size: 14px; text-align: center; transition: background 0.4s, color 0.4s; } body.light footer { background: #fff5eb; color: #555; } footer a { color: var(--gradient2); text-decoration: none; }
-
-/* ================= Toggle Button ================= */ #toggleMode { position: fixed; top: 25px; right: 25px; padding: 14px 20px; background: var(--primary); color: white; border: none; border-radius: 16px; font-weight: 700; cursor: pointer; z-index: 1000; transition: 0.3s; } #toggleMode:hover { background: var(--primary-dark); }
-
-/* ================= Smooth Animations ================= */ body * { transition: 0.4s all ease; } </style>
-
+:root{
+  --gold:#d4af37;
+  --dark:#0b0b0e;
+  --light:#f7f5ef;
+}
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--dark);
+  color:white;
+  transition:0.5s;
+}
+.light{
+  background:var(--light);
+  color:#111;
+}
+header{
+  padding:30px;
+  text-align:center;
+  background:linear-gradient(90deg,#000,#111,#000);
+}
+h1{
+  color:var(--gold);
+  font-size:40px;
+  letter-spacing:2px;
+}
+button{
+  background:var(--gold);
+  border:none;
+  padding:10px 20px;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:15px;
+}
+section{
+  padding:50px;
+  text-align:center;
+}
+.card{
+  background:#111;
+  padding:25px;
+  margin:20px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(212,175,55,0.3);
+  transition:0.4s;
+}
+.card:hover{
+  transform:scale(1.05);
+}
+.light .card{
+  background:white;
+}
+</style>
 </head>
-<body><header>
-  <div class="logo">🎨 Global Art</div>
-  <h1>Global Art</h1>
-  <p>Creativity That Connects the World 🎨</p>
-</header><section class="box">
-  <h2>About Us</h2>
-  <p>Global Art ek creative brand hai jo art, design aur digital creativity ke through brands aur individuals ko grow karne me madad karta hai. Hum aapke ideas ko premium level visuals me transform karte hain.</p>
-</section><section class="box">
-  <h2>Services</h2>
-  <div class="service">🎨 Digital Art</div>
-  <div class="service">🖌 Graphic Design</div>
-  <div class="service">🏷 Brand Identity</div>
-  <div class="service">📱 Social Media Content</div>
-</section><section class="box">
-  <h2>Contact</h2>
-  <p>📧 Email: <a href="mailto:globalart@gmail.com">globalart@gmail.com</a><br>📱 WhatsApp: <a href="https://wa.me/919116706878" target="_blank">+91 9116706878</a></p>
-  <a href="https://wa.me/919116706878" class="btn" target="_blank">Chat on WhatsApp</a>
-  <a href="https://instagram.com/globalart" class="btn" target="_blank">Follow on Instagram</a>
-</section><footer>
-  © 2026 Global Art | Made with ❤️ | Follow us: <a href="https://instagram.com/globalart" target="_blank">Instagram</a>
-</footer><button id="toggleMode">Toggle Light/Dark Mode</button>
+
+<body>
+<header>
+  <h1>GLOBAL ART</h1>
+  <p>Luxury Digital Creative Studio</p>
+  <button onclick="toggle()">🌙 Light / Dark</button>
+</header>
+
+<section>
+  <div class="card">🎨 Premium Designs</div>
+  <div class="card">🚀 High Quality Branding</div>
+  <div class="card">💎 Luxury Business Website</div>
+</section>
 
 <script>
-/* ================= Light/Dark Toggle ================= */
-const toggle = document.getElementById('toggleMode');
-toggle.addEventListener('click', () => {
-  document.body.classList.toggle('light');
-});
+function toggle(){
+  document.body.classList.toggle("light");
+}
+</script>
 
-/* ================= Scroll Animation ================= */
-const boxes = document.querySelectorAll('.box');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
-boxes.forEach(box => observer.observe(box));
-</script></body>
+</body>
 </html>
