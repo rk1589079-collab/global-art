@@ -54,13 +54,28 @@ display:grid;place-items:center;font-size:26px;color:#fff;text-decoration:none;z
 
 form{max-width:520px;margin:auto}
 input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #1e293b;}
+
+/* Carousel Styles */
+.carousel{
+  display:flex;
+  overflow-x:auto;
+  gap:24px;
+  padding-bottom:24px;
+  scroll-behavior:smooth;
+}
+.carousel::-webkit-scrollbar{display:none;}
+.card img{border-radius:12px;width:100%;transition:.3s;}
+.card:hover img{transform:scale(1.05);}
+.card h4{color:var(--gold);margin:12px 0 6px;}
+.card p{margin-bottom:12px;}
+.card .btn{display:inline-block;margin-right:8px;margin-top:6px;}
 </style>
 </head>
 
 <body>
 
 <!-- Floating Buttons -->
-<a href="https://wa.me/917378272741" class="float whatsapp" target="_blank">💬</a>
+<a href="https://wa.me/9178272741" class="float whatsapp" target="_blank">💬</a>
 <a href="https://www.instagram.com/mystivated66" class="float insta" target="_blank">📷</a>
 
 <header>
@@ -82,7 +97,7 @@ input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1
   <div>
     <h2>GLOBAL ART</h2>
     <p>Luxury creative studio for premium branding, logos and social media design.</p>
-    <a href="https://wa.me/917378272741" class="btn">Chat on WhatsApp</a>
+    <a href="https://wa.me/9178272741" class="btn">Chat on WhatsApp</a>
   </div>
 </div>
 
@@ -105,32 +120,56 @@ input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1
   </div>
 </section>
 
-<!-- Art Sale Section -->
+<!-- Ultra Carousel Art Sale Section -->
 <section id="art-sale">
 <h3>Art For Sale</h3>
-<div class="grid">
+<div class="carousel">
 
-<!-- Example Drawing 1 -->
+<!-- Drawing 1 -->
 <div class="card">
-<img src="drawing1.jpg" alt="Drawing 1" style="width:100%;border-radius:12px;">
+<img src="drawing1.jpg" alt="Sunset Dreams">
 <h4>Sunset Dreams</h4>
 <p>Price: ₹500</p>
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Sunset%20Dreams" class="btn" target="_blank">Order via WhatsApp</a>
-<br><br>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/500" class="btn" target="_blank">Buy via PayPal</a>
+<a href="https://wa.me/9178272741?text=Hi%20I%20want%20to%20buy%20Sunset%20Dreams" class="btn" target="_blank">WhatsApp</a>
+<a href="https://www.paypal.com/paypalme/YOURPAYPALID/500" class="btn" target="_blank">PayPal</a>
 </div>
 
-<!-- Example Drawing 2 -->
+<!-- Drawing 2 -->
 <div class="card">
-<img src="drawing2.jpg" alt="Drawing 2" style="width:100%;border-radius:12px;">
+<img src="drawing2.jpg" alt="Golden Horizon">
 <h4>Golden Horizon</h4>
 <p>Price: ₹700</p>
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Golden%20Horizon" class="btn" target="_blank">Order via WhatsApp</a>
-<br><br>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/700" class="btn" target="_blank">Buy via PayPal</a>
+<a href="https://wa.me/9178272741?text=Hi%20I%20want%20to%20buy%20Golden%20Horizon" class="btn" target="_blank">WhatsApp</a>
+<a href="https://www.paypal.com/paypalme/YOURPAYPALID/700" class="btn" target="_blank">PayPal</a>
 </div>
 
-<!-- Add more drawings in same format -->
+<!-- Drawing 3 -->
+<div class="card">
+<img src="drawing3.jpg" alt="Moonlight Tale">
+<h4>Moonlight Tale</h4>
+<p>Price: ₹600</p>
+<a href="https://wa.me/9178272741?text=Hi%20I%20want%20to%20buy%20Moonlight%20Tale" class="btn" target="_blank">WhatsApp</a>
+<a href="https://www.paypal.com/paypalme/YOURPAYPALID/600" class="btn" target="_blank">PayPal</a>
+</div>
+
+<!-- Drawing 4 -->
+<div class="card">
+<img src="drawing4.jpg" alt="Golden Aura">
+<h4>Golden Aura</h4>
+<p>Price: ₹800</p>
+<a href="https://wa.me/9178272741?text=Hi%20I%20want%20to%20buy%20Golden%20Aura" class="btn" target="_blank">WhatsApp</a>
+<a href="https://www.paypal.com/paypalme/YOURPAYPALID/800" class="btn" target="_blank">PayPal</a>
+</div>
+
+<!-- Drawing 5 -->
+<div class="card">
+<img src="drawing5.jpg" alt="Twilight Glow">
+<h4>Twilight Glow</h4>
+<p>Price: ₹900</p>
+<a href="https://wa.me/9178272741?text=Hi%20I%20want%20to%20buy%20Twilight%20Glow" class="btn" target="_blank">WhatsApp</a>
+<a href="https://www.paypal.com/paypalme/YOURPAYPALID/900" class="btn" target="_blank">PayPal</a>
+</div>
+
 </div>
 </section>
 
@@ -152,4 +191,4 @@ input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1
 <footer>© 2026 Global Art</footer>
 
 </body>
-  </html>
+    </html>
