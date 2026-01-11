@@ -8,28 +8,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+/* ============ COLORS & ROOT ============ */
 :root{
   --bg:#B2AEA2;
-  --fg:#ffffff;
+  --fg:#1f1f1f;
   --card:#9f9b90;
-  --gold:#ffffff;
+  --gold:#1f1f1f;
 }
 
+/* ============ GLOBAL ============ */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
   font-family:Poppins,sans-serif;
   background:var(--bg);
   color:var(--fg);
+  transition:.4s;
 }
+a{text-decoration:none;}
 
+/* ============ HEADER ============ */
 header{
   position:fixed;top:0;left:0;width:100%;
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(14px);
   background:rgba(178,174,162,.85);
   z-index:999;
+  box-shadow:0 10px 40px rgba(0,0,0,.15);
 }
-
 nav{
   max-width:1200px;
   margin:auto;
@@ -38,21 +43,27 @@ nav{
   justify-content:space-between;
   padding:16px 24px;
 }
-
 nav h1{
   font-family:"Playfair Display",serif;
   letter-spacing:4px;
-  color:#fff;
+  color:var(--fg);
 }
-
 nav a{
-  color:#fff;
-  text-decoration:none;
+  color:var(--fg);
   margin-left:22px;
-  opacity:.8;
+  opacity:.9;
 }
 nav a:hover{opacity:1;}
+.toggle{
+  background:none;
+  border:1px solid var(--fg);
+  padding:6px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  margin-left:16px;
+}
 
+/* ============ HERO ============ */
 .hero{
   min-height:100vh;
   display:grid;
@@ -60,69 +71,60 @@ nav a:hover{opacity:1;}
   text-align:center;
   background:radial-gradient(80% 50% at 50% 10%,#c9c4b6,transparent);
 }
-
 .hero h2{
   font-family:"Playfair Display",serif;
   font-size:64px;
   letter-spacing:6px;
 }
-
 .hero p{
   max-width:600px;
   margin:18px auto;
-  color:#f5f5f5;
 }
 
+/* ============ BUTTON ============ */
 .btn{
   display:inline-block;
   padding:14px 36px;
-  border:1px solid #fff;
-  color:#fff;
-  text-decoration:none;
+  border:1px solid var(--fg);
+  color:var(--fg);
   border-radius:50px;
-  transition:.3s;
+  transition:.4s;
 }
 .btn:hover{
-  background:#fff;
-  color:#9f9b90;
+  background:var(--fg);
+  color:#fff;
 }
 
+/* ============ SECTIONS ============ */
 section{
   max-width:1200px;
   margin:auto;
   padding:120px 20px;
   text-align:center;
 }
-
 h3{
   font-family:"Playfair Display",serif;
   letter-spacing:4px;
   margin-bottom:50px;
 }
 
+/* ============ CARDS ============ */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:28px;
 }
-
 .card{
   background:rgba(255,255,255,.08);
   backdrop-filter:blur(10px);
   border-radius:20px;
   padding:32px;
-  transition:.4s;
+  transition:.6s ease;
 }
-.card:hover{transform:translateY(-10px);}
-
-.carousel{
-  display:flex;
-  gap:28px;
-  overflow-x:auto;
-  padding-bottom:20px;
+.card:hover{
+  transform:translateY(-12px) scale(1.03);
+  box-shadow:0 30px 60px rgba(0,0,0,.2);
 }
-.carousel::-webkit-scrollbar{display:none;}
-
 .card img{
   width:100%;
   border-radius:16px;
@@ -131,12 +133,16 @@ h3{
 }
 .card img:hover{transform:scale(1.05);}
 
-footer{
-  text-align:center;
-  padding:40px;
-  background:#9f9b90;
+/* ============ CAROUSEL ============ */
+.carousel{
+  display:flex;
+  gap:28px;
+  overflow-x:auto;
+  padding-bottom:20px;
 }
+.carousel::-webkit-scrollbar{display:none;}
 
+/* ============ FLOAT BUTTONS ============ */
 .float{
   position:fixed;
   bottom:22px;
@@ -147,17 +153,51 @@ footer{
   place-items:center;
   font-size:26px;
   color:#fff;
-  text-decoration:none;
   z-index:999;
 }
 .whatsapp{right:22px;background:#25D366;}
 .insta{right:90px;background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);}
 
+/* ============ FOOTER ============ */
+footer{
+  text-align:center;
+  padding:40px;
+  background:var(--card);
+}
+
+/* ============ DARK MODE ============ */
+body.dark{
+  background:#0b0b0b;
+  color:white;
+}
+body.dark nav,
+body.dark header{
+  background:#111;
+}
+body.dark .hero{
+  background:#0b0b0b;
+}
+body.dark .btn{
+  border-color:white;
+  color:white;
+}
+
+/* ============ FADE ANIMATION ============ */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
 </style>
 </head>
 
 <body>
 
+<!-- Floating Buttons -->
 <a href="https://wa.me/917378272741" class="float whatsapp">💬</a>
 <a href="https://www.instagram.com/mystivated66" class="float insta">📷</a>
 
@@ -173,6 +213,7 @@ footer{
 </nav>
 </header>
 
+<!-- Hero Section -->
 <div class="hero" id="home">
 <div>
 <h2>GLOBAL ART</h2>
@@ -181,9 +222,10 @@ footer{
 </div>
 </div>
 
+<!-- Services Section -->
 <section id="services">
 <h3>Our Services</h3>
-<div class="grid">
+<div class="grid fade">
 <div class="card">Luxury Logo Design</div>
 <div class="card">Instagram Branding</div>
 <div class="card">Digital Art</div>
@@ -191,23 +233,47 @@ footer{
 </div>
 </section>
 
+<!-- Art Gallery Section -->
 <section id="art">
 <h3>Art Gallery</h3>
-<div class="carousel">
-<div class="card"><img src="drawing1.jpg"></div>
-<div class="card"><img src="drawing2.jpg"></div>
-<div class="card"><img src="drawing3.jpg"></div>
-<div class="card"><img src="drawing4.jpg"></div>
+<div class="carousel fade">
+<div class="card"><img src="drawing1.jpg" alt="Art 1"></div>
+<div class="card"><img src="drawing2.jpg" alt="Art 2"></div>
+<div class="card"><img src="drawing3.jpg" alt="Art 3"></div>
+<div class="card"><img src="drawing4.jpg" alt="Art 4"></div>
 </div>
 </section>
 
-<section id="contact">
+<!-- Contact Section -->
+<section id="contact" class="fade">
 <h3>Contact Global Art</h3>
 <p>WhatsApp: 7378272741</p>
 <p>Instagram: mystivated66</p>
 </section>
 
 <footer>© 2026 Global Art</footer>
+
+<script>
+/* ---------- DARK MODE TOGGLE ---------- */
+const btn = document.createElement("button");
+btn.innerText = "🌓";
+btn.className = "toggle";
+document.querySelector("nav div").appendChild(btn);
+btn.onclick = () => {
+  document.body.classList.toggle("dark");
+};
+
+/* ---------- FADE ON SCROLL ---------- */
+const faders = document.querySelectorAll('.fade, .hero');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+faders.forEach(el => observer.observe(el));
+</script>
 
 </body>
   </html>
