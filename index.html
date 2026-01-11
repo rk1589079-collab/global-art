@@ -5,204 +5,135 @@
 <title>Global Art – Luxury Brand</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --lux-dark:#1a1a2e;     /* Luxury dark background */
-  --lux-light:#fdf6e3;    /* Creamy white text */
-  --lux-gold:#ffcc00;     /* Accent color */
+  --dark:#0f172a;
+  --light:#fdf6e3;
+  --gold:#facc15;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;transition:0.5s;}
+html{scroll-behavior:smooth;}
 body{
+  background:var(--dark);
+  color:var(--light);
   font-family:'Poppins',sans-serif;
-  background:var(--lux-dark);
-  color:var(--lux-light);
-  transition: background 0.5s, color 0.5s;
+  transition:0.5s;
 }
-
-/* Light/Dark toggle */
-body.light-mode{
-  background:#fdf6e3;
-  color:#1a1a2e;
+body.light{
+  background:var(--light);
+  color:var(--dark);
 }
-
-/* NAVBAR */
 header{
   position:fixed;
-  width:100%;
-  top:0;
-  left:0;
-  background:rgba(0,0,0,0.85);
-  border-bottom:1px solid #222;
+  top:0;left:0;width:100%;
+  background:rgba(0,0,0,0.8);
+  padding:15px 30px;
   z-index:1000;
-  transition: background 0.5s;
 }
-body.light-mode header{
-  background:rgba(255,255,255,0.85);
-  border-bottom:1px solid #ccc;
-}
+body.light header{background:#ffffff;}
 nav{
-  max-width:1200px;
-  margin:auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 20px;
 }
 nav h1{
   font-family:'Playfair Display',serif;
   letter-spacing:3px;
-  font-size:24px;
-  color:var(--lux-light);
-  transition: color 0.5s;
-}
-body.light-mode nav h1{
-  color:#1a1a2e;
+  color:var(--gold);
 }
 nav a{
-  margin-left:30px;
+  margin-left:25px;
   text-decoration:none;
-  color:#aaa;
-  font-size:14px;
-  transition: color 0.5s;
+  color:#ccc;
 }
-nav a:hover{color:var(--lux-gold);}
-
-/* TOGGLE BUTTON */
-.toggle-btn{
-  cursor:pointer;
-  padding:6px 12px;
-  border:1px solid var(--lux-gold);
-  color:var(--lux-gold);
-  background:transparent;
+nav a:hover{color:var(--gold);}
+.toggle{
+  margin-left:20px;
+  padding:6px 15px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  background:none;
   border-radius:6px;
-  transition:0.4s;
 }
-.toggle-btn:hover{
-  background:var(--lux-gold);
-  color:var(--lux-dark);
-}
-
-/* HERO */
 .hero{
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  background:linear-gradient(to bottom, var(--lux-dark), #141414);
-  transition: background 0.5s;
-}
-body.light-mode .hero{
-  background:linear-gradient(to bottom, #fdf6e3, #eae3d9);
 }
 .hero h2{
   font-family:'Playfair Display',serif;
   font-size:60px;
-  letter-spacing:4px;
-  animation: fadeInDown 1s ease forwards;
+  color:var(--gold);
 }
-.hero p{
-  margin:25px auto;
-  max-width:600px;
-  color:#ccc;
-  animation: fadeInUp 1.2s ease forwards;
-}
-body.light-mode .hero p{color:#555;}
+.hero p{margin:20px auto;max-width:600px;}
 .btn{
   display:inline-block;
-  padding:14px 40px;
-  border:1px solid var(--lux-gold);
-  color:var(--lux-gold);
+  padding:15px 40px;
+  border:1px solid var(--gold);
+  color:var(--gold);
   text-decoration:none;
-  letter-spacing:2px;
-  transition:0.4s;
-  animation: fadeInUp 1.4s ease forwards;
 }
-.btn:hover{
-  background:var(--lux-gold);
-  color:black;
-}
-
-/* SECTIONS */
+.btn:hover{background:var(--gold);color:black;}
 section{
   padding:120px 20px;
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
 }
 h3{
   text-align:center;
   font-family:'Playfair Display',serif;
-  font-size:42px;
-  margin-bottom:60px;
-  animation: fadeIn 1s ease forwards;
+  margin-bottom:50px;
+  color:var(--gold);
 }
-
-/* CARDS */
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:30px;
 }
 .card{
-  background:#141414;
-  padding:40px;
-  border:1px solid #222;
-  transition:0.4s;
-  transform: translateY(20px);
-  opacity:0;
-  animation: cardFade 1s forwards;
+  background:#020617;
+  padding:30px;
+  border:1px solid #1e293b;
 }
-body.light-mode .card{
-  background:#fdf6e3;
-  border:1px solid #ccc;
-}
-.card:hover{
-  transform:translateY(-10px);
-  border-color:var(--lux-gold);
-}
-.card h4{
-  color:var(--lux-gold);
-  margin-bottom:15px;
-}
-
-/* FOOTER */
+body.light .card{background:white;}
 footer{
   text-align:center;
-  padding:50px;
-  background:#080808;
-  border-top:1px solid #222;
-  color:#777;
-  transition: background 0.5s, color 0.5s;
+  padding:40px;
+  background:#020617;
 }
-body.light-mode footer{
-  background:#f0f0f0;
-  color:#333;
+body.light footer{background:#e5e7eb;}
+.float{
+  position:fixed;
+  bottom:25px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  color:white;
+  text-decoration:none;
+  z-index:999;
 }
-
-/* Animations */
-@keyframes fadeInDown{
-  0%{opacity:0; transform: translateY(-20px);}
-  100%{opacity:1; transform: translateY(0);}
-}
-@keyframes fadeInUp{
-  0%{opacity:0; transform: translateY(20px);}
-  100%{opacity:1; transform: translateY(0);}
-}
-@keyframes fadeIn{
-  0%{opacity:0;}
-  100%{opacity:1;}
-}
-@keyframes cardFade{
-  0%{opacity:0; transform: translateY(20px);}
-  100%{opacity:1; transform: translateY(0);}
+.whatsapp{right:25px;background:#25D366;}
+.insta{right:90px;background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
 }
 </style>
 </head>
 
 <body>
+
+<a href="https://wa.me/91737827274" class="float whatsapp">💬</a>
+<a href="https://instagram.com/mystivated" class="float insta">📷</a>
 
 <header>
 <nav>
@@ -212,7 +143,7 @@ body.light-mode footer{
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#contact">Contact</a>
-<button class="toggle-btn" onclick="toggleMode()">Light/Dark</button>
+<button class="toggle" onclick="document.body.classList.toggle('light')">Light/Dark</button>
 </div>
 </nav>
 </header>
@@ -220,50 +151,46 @@ body.light-mode footer{
 <div class="hero" id="home">
 <div>
 <h2>GLOBAL ART</h2>
-<p>Luxury fashion and digital presence designed for elite brands.</p>
-<a href="#contact" class="btn">START YOUR JOURNEY</a>
+<p>Luxury design studio for premium brands.</p>
+<a href="https://wa.me/91737827274" class="btn">Chat on WhatsApp</a>
 </div>
 </div>
 
 <section id="about">
 <h3>About Us</h3>
-<p style="text-align:center;color:#ccc;max-width:700px;margin:auto;">
-Global Art is a creative design studio helping brands stand out in the digital world.
-</p>
+<p style="text-align:center;">We create luxury logos, social media designs and digital branding.</p>
 </section>
 
 <section id="services">
 <h3>Our Services</h3>
 <div class="cards">
-<div class="card">
-<h4>Logo Design</h4>
-<p>Luxury and modern logos that make your brand unforgettable.</p>
-</div>
-<div class="card">
-<h4>Social Media Design</h4>
-<p>Instagram, YouTube and business visuals that attract attention.</p>
-</div>
-<div class="card">
-<h4>Brand Identity</h4>
-<p>Colors, fonts and style that make your brand look premium.</p>
-</div>
+<div class="card">Luxury Logo Design</div>
+<div class="card">Instagram Branding</div>
+<div class="card">Digital Art</div>
 </div>
 </section>
 
 <section id="contact">
-<h3>Contact Us</h3>
-<p style="text-align:center;color:#ccc;">Email: globalart@gmail.com</p>
+<h3>Contact Global Art</h3>
+
+<form action="https://formsubmit.co/globalart@gmail.com" method="POST" style="max-width:500px;margin:auto;text-align:center;">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="text" name="phone" placeholder="Your WhatsApp Number">
+<textarea name="message" placeholder="Your Message" required></textarea>
+<button type="submit" class="btn">Send Message</button>
+</form>
+
+<p style="text-align:center;margin-top:30px;">
+WhatsApp: 737827274<br>
+Instagram: mystivated<br>
+Email: globalart@gmail.com
+</p>
 </section>
 
 <footer>
-© 2026 Global Art — Luxury Brand
+© 2026 Global Art
 </footer>
 
-<script>
-function toggleMode(){
-  document.body.classList.toggle('light-mode');
-}
-</script>
-
 </body>
-  </html>
+</html>
