@@ -2,198 +2,155 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Global Art — Luxury Creative Studio</title>
+<title>Global Art</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#B2AEA2;
-  --fg:#1f1f1f;
-  --card:#9f9b90;
-  --gold:#1f1f1f;
+  --bg:#0b1220;
+  --text:#fdf6e3;
+  --gold:#facc15;
 }
-
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:Poppins,sans-serif;background:var(--bg);color:var(--fg);transition:.4s;}
-a{text-decoration:none;}
-
-header{position:fixed;top:0;left:0;width:100%;backdrop-filter:blur(14px);background:rgba(178,174,162,.85);z-index:999;box-shadow:0 10px 40px rgba(0,0,0,.15);}
-nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
-nav h1{font-family:"Playfair Display",serif; letter-spacing:4px; color:var(--fg);}
-nav a{color:var(--fg); margin-left:22px; opacity:.9;}
-nav a:hover{opacity:1;}
-.toggle{background:none;border:1px solid var(--fg);padding:6px 14px;border-radius:20px;cursor:pointer;margin-left:16px;}
-
-.hero{min-height:100vh;display:grid;place-items:center;text-align:center;background:radial-gradient(80% 50% at 50% 10%,#c9c4b6,transparent);background-attachment:fixed;}
-.hero h2{font-family:"Playfair Display",serif;font-size:64px;letter-spacing:6px;opacity:0;transform:translateY(40px);transition:1s ease;}
-.hero p{max-width:600px;margin:18px auto;opacity:0;transform:translateY(40px);transition:1s ease 0.3s;}
-.hero.show h2,.hero.show p{opacity:1;transform:translateY(0);}
-
-.btn{display:inline-block;padding:14px 36px;border:1px solid var(--fg);color:var(--fg);border-radius:50px;transition:.4s;margin-top:16px;}
-.btn:hover{background:var(--fg);color:white;}
-
-section{max-width:1200px;margin:auto;padding:120px 20px;text-align:center;}
-h3{font-family:"Playfair Display",serif;letter-spacing:4px;margin-bottom:30px;}
-.section-text{max-width:800px;margin:16px auto 50px;font-size:16px;color:var(--fg);}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;}
-.card{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border-radius:20px;padding:32px;transition:.6s ease;opacity:0;transform:translateY(40px);}
-.card:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 30px 60px rgba(0,0,0,.2);}
-.card img{width:100%;border-radius:16px;cursor:pointer;transition:.4s;}
-.card img:hover{transform:scale(1.05);}
-
-.carousel{display:flex;gap:28px;overflow-x:auto;padding-bottom:20px;}
-.carousel::-webkit-scrollbar{display:none;}
-
-.float{position:fixed;bottom:22px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;color:#fff;z-index:999;}
-.whatsapp{right:22px;background:#25D366;}
-.insta{right:90px;background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);}
-
-footer{text-align:center;padding:40px;background:var(--card);}
-body.dark{background:#0b0b0b;color:white;}
-body.dark nav,body.dark header{background:#111;}
-body.dark .hero{background:#0b0b0b;}
-body.dark .btn{border-color:white;color:white;}
-.fade{opacity:0; transform:translateY(40px); transition:1s ease;}
-.fade.show{opacity:1; transform:translateY(0);}
-
-/* ART OVERLAY BUTTONS */
-.art-overlay{position:relative;}
-.art-overlay .btn-group{
-  position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:12px;opacity:0;transition:.3s;
+body{
+  margin:0;
+  font-family:Poppins;
+  background:var(--bg);
+  color:var(--text);
+  transition:.4s;
 }
-.art-overlay:hover .btn-group{opacity:1;}
-.art-overlay .price-tag{
-  position:absolute;top:16px;right:16px;background:var(--fg);color:white;padding:6px 12px;border-radius:12px;font-weight:bold;
+.light{
+  --bg:#fdf6e3;
+  --text:#0b1220;
 }
+header{
+  position:fixed;
+  width:100%;
+  background:#0008;
+  backdrop-filter:blur(10px);
+  padding:15px;
+  z-index:99;
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav h1{font-family:Playfair Display;color:var(--gold);}
+nav a{color:white;margin:0 12px;text-decoration:none;}
+.toggle{
+  border:1px solid var(--gold);
+  padding:5px 12px;
+  background:none;
+  color:var(--gold);
+}
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+}
+.hero h2{font-size:50px;color:var(--gold);}
+.btn{
+  padding:12px 30px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  border-radius:10px;
+}
+section{padding:80px 20px;max-width:1200px;margin:auto;}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  background:#020617;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+}
+.card img{width:100%;border-radius:10px;}
+.float{
+  position:fixed;
+  bottom:20px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+  color:white;
+  text-decoration:none;
+}
+.whatsapp{right:20px;background:#25D366;}
+.insta{right:90px;background:#E1306C;}
 </style>
 </head>
+
 <body>
 
 <a href="https://wa.me/917378272741" class="float whatsapp">💬</a>
-<a href="https://www.instagram.com/mystivated66" class="float insta">📷</a>
+<a href="https://instagram.com/mystivated66" class="float insta">📷</a>
 
 <header>
 <nav>
 <h1>GLOBAL ART</h1>
 <div>
 <a href="#home">Home</a>
-<a href="#services">Services</a>
 <a href="#art">Art</a>
 <a href="#contact">Contact</a>
+<button class="toggle" onclick="document.body.classList.toggle('light')">Light/Dark</button>
 </div>
 </nav>
 </header>
 
 <div class="hero" id="home">
-<div>
 <h2>GLOBAL ART</h2>
-<p>Luxury Creative Studio for Premium Branding & Digital Art</p>
-<a href="https://wa.me/917378272741" class="btn">Chat on WhatsApp</a>
+<p>Luxury Creative Art Store</p>
+<a class="btn" href="https://wa.me/917378272741">Contact on WhatsApp</a>
 </div>
-</div>
-
-<section id="services">
-<h3>Our Services</h3>
-<p class="section-text">We provide high-end creative solutions for brands that want to stand out. Explore our services below.</p>
-<div class="grid">
-<div class="card">
-<h4>Luxury Logo Design</h4>
-<p>Create premium logos that make your brand unforgettable.</p>
-</div>
-<div class="card">
-<h4>Instagram Branding</h4>
-<p>Modern Instagram designs to elevate your brand presence.</p>
-</div>
-<div class="card">
-<h4>Digital Art</h4>
-<p>Unique digital art tailored to your style and vision.</p>
-</div>
-<div class="card">
-<h4>Premium Posters</h4>
-<p>High-quality posters perfect for display or marketing.</p>
-</div>
-</div>
-</section>
 
 <section id="art">
-<h3>Art Gallery</h3>
-<p class="section-text">Explore our exclusive art collection. Click on any artwork to view in full screen or buy via WhatsApp/PayPal.</p>
-<div class="carousel">
-<div class="card art-overlay">
-<img src="drawing1.jpg" alt="Sunset Dreams">
-<div class="price-tag">₹500</div>
-<div class="btn-group">
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Sunset%20Dreams" class="btn" target="_blank">WhatsApp</a>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/500" class="btn" target="_blank">PayPal</a>
+<h2 style="text-align:center;color:var(--gold)">Art For Sale</h2>
+<div class="grid">
+
+<div class="card">
+<img src="drawing1.jpg">
+<h3>Golden Art</h3>
+<p>₹500</p>
+<a class="btn" href="https://wa.me/917378272741?text=I want Golden Art">Buy</a>
 </div>
+
+<div class="card">
+<img src="drawing2.jpg">
+<h3>Luxury Dream</h3>
+<p>₹700</p>
+<a class="btn" href="https://wa.me/917378272741?text=I want Luxury Dream">Buy</a>
 </div>
-<div class="card art-overlay">
-<img src="drawing2.jpg" alt="Golden Horizon">
-<div class="price-tag">₹700</div>
-<div class="btn-group">
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Golden%20Horizon" class="btn" target="_blank">WhatsApp</a>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/700" class="btn" target="_blank">PayPal</a>
+
+<div class="card">
+<img src="drawing3.jpg">
+<h3>Creative Light</h3>
+<p>₹600</p>
+<a class="btn" href="https://wa.me/917378272741?text=I want Creative Light">Buy</a>
 </div>
-</div>
-<div class="card art-overlay">
-<img src="drawing3.jpg" alt="Moonlight Tale">
-<div class="price-tag">₹600</div>
-<div class="btn-group">
-<a href="https://wa.me/917378272741?text=Hi%20I%20want%20to%20buy%20Moonlight%20Tale" class="btn" target="_blank">WhatsApp</a>
-<a href="https://www.paypal.com/paypalme/YOURPAYPALID/600" class="btn" target="_blank">PayPal</a>
-</div>
-</div>
+
 </div>
 </section>
 
 <section id="contact">
-<h3>Contact Global Art</h3>
-<p>WhatsApp: 7378272741</p>
-<p>Instagram: mystivated66</p>
+<h2 style="text-align:center;color:var(--gold)">Contact</h2>
+<p style="text-align:center">WhatsApp: 7378272741</p>
+<p style="text-align:center">Instagram: mystivated66</p>
 </section>
 
-<footer>© 2026 Global Art</footer>
-
-<script>
-/* DARK MODE */
-const btn = document.createElement("button");
-btn.innerText = "🌓";
-btn.className = "toggle";
-document.querySelector("nav div").appendChild(btn);
-btn.onclick = () => document.body.classList.toggle("dark");
-
-/* FADE-IN ANIMATION */
-const faders = document.querySelectorAll('.hero, .card');
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('show');}
-  });
-});
-faders.forEach(el=>observer.observe(el));
-
-/* IMAGE POPUP */
-const cards = document.querySelectorAll('.card img');
-cards.forEach(img=>{
-  img.addEventListener('click',()=>{
-    const popup = document.createElement('div');
-    popup.style.position='fixed';
-    popup.style.top='0';popup.style.left='0';
-    popup.style.width='100%';popup.style.height='100%';
-    popup.style.background='rgba(0,0,0,0.85)';
-    popup.style.display='flex';popup.style.alignItems='center';popup.style.justifyContent='center';
-    popup.style.zIndex='9999';
-    const popImg=document.createElement('img');
-    popImg.src=img.src; popImg.style.maxWidth='90%'; popImg.style.maxHeight='90%';
-    popImg.style.borderRadius='16px';
-    popup.appendChild(popImg);
-    popup.addEventListener('click',()=>popup.remove());
-    document.body.appendChild(popup);
-  });
-});
-</script>
+<footer style="text-align:center;padding:20px">
+© 2026 Global Art
+</footer>
 
 </body>
   </html>
