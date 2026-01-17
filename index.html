@@ -4,140 +4,236 @@
 <meta charset="UTF-8">
 <title>Global Art | Rehan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
+:root{
+  --bg:#0b0b0b;
+  --card:#111;
+  --text:#fff;
+  --muted:#aaa;
+  --border:#333;
+}
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  background:#0f0f0f;
-  color:#e0e0e0;
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior: smooth;
+  transition: background 0.3s, color 0.3s;
+}
+body.light{
+  --bg:#f5f5f5;
+  --card:#fff;
+  --text:#111;
+  --muted:#555;
+  --border:#ccc;
 }
 
 header{
-  padding:20px;
-  text-align:center;
-  background:#111;
-  border-bottom:1px solid #333;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 30px;
+  background:var(--card);
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:1px solid var(--border);
 }
-
-header h1{
-  margin:0;
-  color:#fff;
+.logo{
+  font-size:28px;
+  font-weight:700;
 }
-
-header p{
-  color:#aaa;
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
+}
+.toggle{
+  border:1px solid var(--border);
+  padding:8px 15px;
+  border-radius:25px;
+  cursor:pointer;
   font-size:14px;
 }
 
-.gallery{
+.hero{
+  text-align:center;
+  padding:120px 20px;
+}
+.hero h1{
+  font-size:52px;
+  letter-spacing:4px;
+  margin-bottom:15px;
+}
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  margin-bottom:30px;
+}
+.hero a{
+  padding:15px 35px;
+  border-radius:40px;
+  border:1px solid var(--border);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+.hero a:hover{
+  background:var(--card);
+}
+
+section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+h2{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:50px;
+}
+
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:20px;
+  gap:25px;
 }
 
 .card{
-  background:#1a1a1a;
-  border-radius:12px;
+  background:var(--card);
+  border-radius:18px;
   overflow:hidden;
-  box-shadow:0 0 10px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
+.card:hover{
+  transform: translateY(-8px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
 .card img{
   width:100%;
   display:block;
+  border-bottom:1px solid var(--border);
 }
-
 .card .info{
   padding:15px;
 }
-
 .card h3{
   margin:0;
-  color:#fff;
+  font-size:18px;
 }
-
 .card p{
   font-size:13px;
-  color:#aaa;
+  color:var(--muted);
+  margin:5px 0;
 }
-
 .buy{
-  display:block;
+  display:inline-block;
   margin-top:10px;
-  text-align:center;
-  padding:10px;
-  background:#2e2e2e;
+  padding:10px 18px;
+  background:#25d366;
   color:#fff;
   text-decoration:none;
   border-radius:8px;
+  font-weight:500;
+  transition:0.3s;
 }
-
 .buy:hover{
-  background:#444;
+  background:#1ebe57;
 }
 
 footer{
   text-align:center;
-  padding:15px;
-  background:#111;
-  color:#777;
+  padding:20px;
+  background:var(--card);
+  border-top:1px solid var(--border);
+  color:var(--muted);
   font-size:13px;
 }
+
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Global Art</h1>
-  <p>Original Drawings by Rehan</p>
+  <div class="logo">GLOBAL ART</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="toggle" onclick="toggleMode()">Light / Dark</div>
 </header>
 
-<section class="gallery">
+<div class="hero" id="home">
+  <h1>GLOBAL ART</h1>
+  <p>Luxury Creative Art Store by Rehan</p>
+  <a href="https://wa.me/917378272741">Contact on WhatsApp</a>
+</div>
 
-  <div class="card">
-    <img src="art1.jpg">
-    <div class="info">
-      <h3>Anime Drawing</h3>
-      <p>Handmade artwork</p>
-      <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
-    </div>
+<section id="gallery">
+<h2>Art Gallery</h2>
+
+<div class="grid">
+
+<div class="card">
+  <img src="art1.jpg" alt="Art 1">
+  <div class="info">
+    <h3>Anime Sketch</h3>
+    <p>Handmade artwork</p>
+    <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
   </div>
+</div>
 
-  <div class="card">
-    <img src="art2.jpg">
-    <div class="info">
-      <h3>Cartoon Art</h3>
-      <p>Color drawing</p>
-      <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
-    </div>
+<div class="card">
+  <img src="art2.jpg" alt="Art 2">
+  <div class="info">
+    <h3>Cartoon Drawing</h3>
+    <p>Color pencil work</p>
+    <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
   </div>
+</div>
 
-  <div class="card">
-    <img src="art3.jpg">
-    <div class="info">
-      <h3>Pencil Sketch</h3>
-      <p>Detailed sketch art</p>
-      <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
-    </div>
+<div class="card">
+  <img src="art3.jpg" alt="Art 3">
+  <div class="info">
+    <h3>Pencil Portrait</h3>
+    <p>Realistic sketch</p>
+    <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
   </div>
+</div>
 
-  <div class="card">
-    <img src="art4.jpg">
-    <div class="info">
-      <h3>Dragon Ball Art</h3>
-      <p>Anime fan art</p>
-      <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
-    </div>
+<div class="card">
+  <img src="art4.jpg" alt="Art 4">
+  <div class="info">
+    <h3>Dragon Ball Art</h3>
+    <p>Anime fan art</p>
+    <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
   </div>
+</div>
 
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
+<p style="text-align:center;color:var(--muted);">
+WhatsApp: +91 7378272741<br>
+Instagram: <a href="https://www.instagram.com/mystivated66?igsh=ampldmVrN3ZtMjBj" target="_blank" style="color:#25d366;">@mystivated66</a>
+</p>
 </section>
 
 <footer>
   © 2026 Global Art | Designed by Rehan
 </footer>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
+</script>
 
 </body>
   </html>
