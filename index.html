@@ -2,175 +2,153 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Global Art | Luxury Drawings</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Art</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+<!-- CSS -->
 <style>
-:root{
-  --bg:#0b0b0b;
-  --card:#141414;
-  --text:#ffffff;
-  --muted:#9a9a9a;
-  --accent:#25D366;
+:root {
+    --bg-dark: #0b1220;
+    --bg-light: #fdf6e3;
+    --text-dark: #fdf6e3;
+    --text-light: #0b1220;
 }
 
-body{
-  margin:0;
-  font-family:Poppins, sans-serif;
-  background:var(--bg);
-  color:var(--text);
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+    transition: all 0.4s ease;
 }
 
-header{
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #222;
+h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 3rem;
 }
 
-header h1{
-  margin:0;
-  font-size:22px;
-  letter-spacing:2px;
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-nav a{
-  color:var(--muted);
-  margin-left:15px;
-  text-decoration:none;
-  font-size:14px;
+img {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.hero{
-  text-align:center;
-  padding:60px 20px;
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.hero h2{
-  font-size:36px;
-  margin-bottom:10px;
+/* Light Mode */
+.light-mode {
+    --bg-dark: #fdf6e3;
+    --bg-light: #0b1220;
+    --text-dark: #0b1220;
+    --text-light: #fdf6e3;
 }
 
-.hero p{
-  color:var(--muted);
+/* Light/Dark toggle button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 100;
+    transition: 0.3s;
 }
 
-.gallery{
-  padding:20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+.toggle-btn:hover {
+    background: #e67e22;
 }
 
-.card{
-  background:var(--card);
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,.6);
+/* WhatsApp button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
-.card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
+.whatsapp-btn:hover {
+    background: #1ebe57;
 }
 
-.card-content{
-  padding:20px;
-}
-
-.card-content h3{
-  margin:0 0 6px;
-}
-
-.card-content p{
-  margin:0 0 14px;
-  color:var(--muted);
-  font-size:14px;
-}
-
-.buy{
-  display:block;
-  text-align:center;
-  background:var(--accent);
-  color:#000;
-  padding:12px;
-  border-radius:12px;
-  font-weight:600;
-  text-decoration:none;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  color:var(--muted);
-  font-size:13px;
+/* Fade-in animation */
+img.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
 </head>
-
 <body>
 
-<header>
-  <h1>GLOBAL ART</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+<!-- Light/Dark Mode Toggle -->
+<button class="toggle-btn" onclick="toggleMode()">Light / Dark</button>
 
-<section class="hero">
-  <h2>Global Art</h2>
-  <p>Original Drawings by Rehan</p>
-</section>
+<h1>Global Art Gallery</h1>
 
-<section class="gallery">
+<div class="container">
+    <img src="images/art1.jpg" alt="Art 1">
+    <img src="images/art2.jpg" alt="Art 2">
+    <img src="images/art3.jpg" alt="Art 3">
+    <img src="images/art4.jpg" alt="Art 4">
+    <img src="images/art5.jpg" alt="Art 5">
+    <img src="images/art6.jpg" alt="Art 6">
+    <img src="images/art7.jpg" alt="Art 7">
+</div>
 
-  <div class="card">
-    <img src="images/art1.jpg">
-    <div class="card-content">
-      <h3>Anime Sketch</h3>
-      <p>Handmade artwork</p>
-      <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
-    </div>
-  </div>
+<!-- WhatsApp Buy Button -->
+<a class="whatsapp-btn" href="https://wa.me/7378272741" target="_blank">Buy on WhatsApp</a>
 
-  <div class="card">
-    <img src="images/art2.jpg">
-    <div class="card-content">
-      <h3>Cartoon Drawing</h3>
-      <p>Color pencil work</p>
-      <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
-    </div>
-  </div>
+<!-- JavaScript -->
+<script>
+// Light/Dark Mode Toggle
+function toggleMode() {
+    document.body.classList.toggle('light-mode');
+}
 
-  <div class="card">
-    <img src="images/art3.jpg">
-    <div class="card-content">
-      <h3>Pencil Portrait</h3>
-      <p>Realistic sketch</p>
-      <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="images/art4.jpg">
-    <div class="card-content">
-      <h3>Custom Art</h3>
-      <p>On demand drawing</p>
-      <a class="buy" href="https://wa.me/917378272741">Buy on WhatsApp</a>
-    </div>
-  </div>
-
-</section>
-
-<footer>
-  © 2026 Global Art • Made by Rehan
-</footer>
+// Fade-in Images on Load
+window.addEventListener('load', () => {
+    const images = document.querySelectorAll('img');
+    images.forEach((img, index) => {
+        setTimeout(() => {
+            img.classList.add('show');
+        }, index * 200); // staggered animation
+    });
+});
+</script>
 
 </body>
 </html>
