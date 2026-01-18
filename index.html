@@ -2,23 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Global Art – Luxury Drawing Studio</title>
+<title>Global Art – Creative Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0e0e11;
-  --card:#16161d;
-  --text:#eaeaea;
+  --bg:#0b0b0f;
+  --card:#15151c;
+  --text:#f1f1f1;
   --muted:#a1a1aa;
 }
 body.light{
-  --bg:#f5f5f5;
+  --bg:#f6f6f6;
   --card:#ffffff;
-  --text:#111;
+  --text:#111111;
   --muted:#555;
 }
 
@@ -31,55 +30,80 @@ body{
   transition:0.3s;
 }
 
-/* Header */
-header{
-  padding:30px 20px;
-  text-align:center;
-}
-header h1{
-  font-family:'Playfair Display',serif;
-  font-size:36px;
-}
-header p{color:var(--muted);}
-
 /* Toggle */
 .toggle{
   position:fixed;
-  top:20px;
-  right:20px;
+  top:15px;
+  right:15px;
   background:var(--card);
   padding:8px 14px;
   border-radius:20px;
   cursor:pointer;
   font-size:14px;
+  z-index:999;
 }
 
-/* Gallery */
-.gallery{
-  padding:40px 20px;
+/* Header */
+header{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+header h1{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+}
+header p{
+  color:var(--muted);
+  max-width:500px;
+}
+
+/* Sections */
+section{
+  padding:80px 20px;
+}
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+/* Cards */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 .card{
   background:var(--card);
-  border-radius:14px;
-  overflow:hidden;
-  animation:fade 0.8s ease;
-}
-.card img{
-  width:100%;
-  display:block;
-}
-.card .info{
-  padding:14px;
+  padding:25px;
+  border-radius:16px;
+  animation:fade 1s ease;
 }
 .card h3{
   font-family:'Playfair Display',serif;
 }
-.card a{
-  display:inline-block;
+.card p{
+  color:var(--muted);
   margin-top:10px;
+}
+
+/* Gallery */
+.gallery img{
+  width:100%;
+  border-radius:12px;
+  animation:fade 1s ease;
+}
+
+/* Contact */
+.contact a{
+  display:inline-block;
+  margin:10px;
   color:#25d366;
   text-decoration:none;
   font-weight:500;
@@ -87,13 +111,14 @@ header p{color:var(--muted);}
 
 /* Footer */
 footer{
+  padding:30px;
   text-align:center;
-  padding:30px 20px;
   color:var(--muted);
 }
 
+/* Animation */
 @keyframes fade{
-  from{opacity:0;transform:translateY(20px);}
+  from{opacity:0;transform:translateY(30px);}
   to{opacity:1;transform:translateY(0);}
 }
 </style>
@@ -105,45 +130,57 @@ footer{
 
 <header>
   <h1>Global Art</h1>
-  <p>Luxury Hand-Drawn Artwork</p>
+  <p>Luxury Creative Studio for Artists, Creators & Learners</p>
 </header>
 
-<section class="gallery">
-  <div class="card">
-    <img src="images/art1.jpg">
-    <div class="info">
-      <h3>Artwork 1</h3>
-      <a href="https://wa.me/917378272741" target="_blank">Buy on WhatsApp</a>
+<section id="promotion">
+  <h2 class="section-title">Content Creators Promotion</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Instagram Growth</h3>
+      <p>Reels strategy, branding & promotion for creators.</p>
     </div>
-  </div>
-
-  <div class="card">
-    <img src="images/art2.jpg">
-    <div class="info">
-      <h3>Artwork 2</h3>
-      <a href="https://wa.me/917378272741" target="_blank">Buy on WhatsApp</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="images/art3.jpg">
-    <div class="info">
-      <h3>Artwork 3</h3>
-      <a href="https://wa.me/917378272741" target="_blank">Buy on WhatsApp</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="images/art4.jpg">
-    <div class="info">
-      <h3>Artwork 4</h3>
-      <a href="https://wa.me/917378272741" target="_blank">Buy on WhatsApp</a>
+    <div class="card">
+      <h3>Video Promotion</h3>
+      <p>Your content promoted to the right audience.</p>
     </div>
   </div>
 </section>
 
+<section id="learning">
+  <h2 class="section-title">Learning & Editing</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Video Editing</h3>
+      <p>Learn mobile & PC editing step by step.</p>
+    </div>
+    <div class="card">
+      <h3>Design Basics</h3>
+      <p>Thumbnails, posters & creative design learning.</p>
+    </div>
+  </div>
+</section>
+
+<section id="art">
+  <h2 class="section-title">Drawing & Art</h2>
+  <div class="grid gallery">
+    <img src="images/art1.jpg">
+    <img src="images/art2.jpg">
+    <img src="images/art3.jpg">
+    <img src="images/art4.jpg">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact</h2>
+  <div style="text-align:center;">
+    <a href="https://wa.me/917378272741" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/mystivated66" target="_blank">Instagram</a>
+  </div>
+</section>
+
 <footer>
-  Instagram: <a href="https://instagram.com/mystivated66" target="_blank">@mystivated</a>
+  © 2026 Global Art
 </footer>
 
 <script>
