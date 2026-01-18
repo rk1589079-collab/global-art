@@ -5,22 +5,27 @@
 <title>Global Art – Creative Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+/* ===== THEME ===== */
 :root{
-  --bg:#0b0b0f;
-  --card:#15151c;
-  --text:#f1f1f1;
-  --muted:#a1a1aa;
-}
-body.light{
-  --bg:#f6f6f6;
+  --bg:#f1e6d8;          /* light brown */
   --card:#ffffff;
-  --text:#111111;
-  --muted:#555;
+  --text:#2b1e14;
+  --muted:#6b5a4a;
+  --accent:#8b5e34;
+}
+body.dark{
+  --bg:#14110e;
+  --card:#1f1a16;
+  --text:#f3ede7;
+  --muted:#b8a99a;
+  --accent:#c89b6d;
 }
 
+/* ===== BASE ===== */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
@@ -30,95 +35,122 @@ body{
   transition:0.3s;
 }
 
-/* Toggle */
+/* ===== TOGGLE ===== */
 .toggle{
   position:fixed;
-  top:15px;
-  right:15px;
+  top:16px;
+  right:16px;
   background:var(--card);
+  color:var(--text);
   padding:8px 14px;
   border-radius:20px;
   cursor:pointer;
-  font-size:14px;
   z-index:999;
+  font-size:14px;
 }
 
-/* Header */
+/* ===== HERO ===== */
 header{
   min-height:100vh;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
   padding:20px;
 }
 header h1{
   font-family:'Playfair Display',serif;
-  font-size:42px;
+  font-size:46px;
 }
 header p{
+  max-width:520px;
+  margin:15px auto;
   color:var(--muted);
-  max-width:500px;
 }
-
-/* Sections */
-section{
-  padding:80px 20px;
-}
-.section-title{
-  text-align:center;
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  margin-bottom:40px;
-}
-
-/* Cards */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-.card{
-  background:var(--card);
-  padding:25px;
-  border-radius:16px;
-  animation:fade 1s ease;
-}
-.card h3{
-  font-family:'Playfair Display',serif;
-}
-.card p{
-  color:var(--muted);
-  margin-top:10px;
-}
-
-/* Gallery */
-.gallery img{
-  width:100%;
-  border-radius:12px;
-  animation:fade 1s ease;
-}
-
-/* Contact */
-.contact a{
+header a{
   display:inline-block;
-  margin:10px;
-  color:#25d366;
+  margin-top:20px;
+  padding:12px 28px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:30px;
   text-decoration:none;
   font-weight:500;
 }
 
-/* Footer */
+/* ===== SECTION ===== */
+section{
+  padding:90px 20px;
+}
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  margin-bottom:45px;
+}
+
+/* ===== CARDS ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.card{
+  background:var(--card);
+  padding:26px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+  animation:fade 1s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+}
+.card h3{
+  font-family:'Playfair Display',serif;
+  margin-bottom:10px;
+}
+.card p{
+  color:var(--muted);
+}
+
+/* ===== BUTTONS ===== */
+.btn{
+  display:inline-block;
+  margin-top:14px;
+  padding:10px 20px;
+  border-radius:25px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* ===== GALLERY ===== */
+.gallery img{
+  width:100%;
+  border-radius:16px;
+  animation:fade 1.2s ease;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  text-align:center;
+}
+.contact a{
+  margin:10px;
+}
+
+/* ===== FOOTER ===== */
 footer{
   padding:30px;
   text-align:center;
   color:var(--muted);
 }
 
-/* Animation */
+/* ===== ANIMATION ===== */
 @keyframes fade{
-  from{opacity:0;transform:translateY(30px);}
+  from{opacity:0;transform:translateY(35px);}
   to{opacity:1;transform:translateY(0);}
 }
 </style>
@@ -128,41 +160,52 @@ footer{
 
 <div class="toggle" onclick="toggleMode()">Light / Dark</div>
 
+<!-- HERO -->
 <header>
-  <h1>Global Art</h1>
-  <p>Luxury Creative Studio for Artists, Creators & Learners</p>
+  <div>
+    <h1>Global Art</h1>
+    <p>Creative hub for Content Creators, Editors & Luxury Hand-Drawn Art</p>
+    <a href="#contact">Start Your Journey</a>
+  </div>
 </header>
 
-<section id="promotion">
+<!-- PROMOTION -->
+<section>
   <h2 class="section-title">Content Creators Promotion</h2>
   <div class="grid">
     <div class="card">
       <h3>Instagram Growth</h3>
-      <p>Reels strategy, branding & promotion for creators.</p>
+      <p>Reels strategy, profile optimisation & organic reach.</p>
+      <a class="btn" href="https://wa.me/917378272741" target="_blank">Promote Now</a>
     </div>
     <div class="card">
-      <h3>Video Promotion</h3>
-      <p>Your content promoted to the right audience.</p>
+      <h3>Creator Branding</h3>
+      <p>Build strong identity & audience trust.</p>
+      <a class="btn" href="https://instagram.com/mystivated66" target="_blank">DM on Instagram</a>
     </div>
   </div>
 </section>
 
-<section id="learning">
-  <h2 class="section-title">Learning & Editing</h2>
+<!-- LEARNING -->
+<section>
+  <h2 class="section-title">Learn Editing & Creativity</h2>
   <div class="grid">
     <div class="card">
       <h3>Video Editing</h3>
-      <p>Learn mobile & PC editing step by step.</p>
+      <p>Mobile & PC editing – beginner to advanced.</p>
+      <a class="btn" href="https://wa.me/917378272741" target="_blank">Learn Editing</a>
     </div>
     <div class="card">
-      <h3>Design Basics</h3>
-      <p>Thumbnails, posters & creative design learning.</p>
+      <h3>Design Skills</h3>
+      <p>Thumbnails, posters & visual creativity.</p>
+      <a class="btn" href="https://wa.me/917378272741" target="_blank">Start Learning</a>
     </div>
   </div>
 </section>
 
-<section id="art">
-  <h2 class="section-title">Drawing & Art</h2>
+<!-- ART -->
+<section>
+  <h2 class="section-title">Luxury Drawing Art</h2>
   <div class="grid gallery">
     <img src="images/art1.jpg">
     <img src="images/art2.jpg">
@@ -171,21 +214,20 @@ footer{
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="contact">
-  <h2 class="section-title">Contact</h2>
-  <div style="text-align:center;">
-    <a href="https://wa.me/917378272741" target="_blank">WhatsApp</a>
-    <a href="https://instagram.com/mystivated66" target="_blank">Instagram</a>
-  </div>
+  <h2 class="section-title">Contact & Work With Me</h2>
+  <a class="btn" href="https://wa.me/917378272741" target="_blank">WhatsApp</a>
+  <a class="btn" href="https://instagram.com/mystivated66" target="_blank">Instagram</a>
 </section>
 
 <footer>
-  © 2026 Global Art
+  © 2026 Global Art • Built with passion
 </footer>
 
 <script>
 function toggleMode(){
-  document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
 }
 </script>
 
